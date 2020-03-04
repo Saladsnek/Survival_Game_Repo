@@ -21,17 +21,17 @@ public class MechanicsForPlayer : MonoBehaviour
         timeInDayUI.gameObject.GetComponent<Text>().text = ("TIME: " + (int)timeInDay);
         daysPassedUI.gameObject.GetComponent<Text>().text = ("DAY: " + daysPassed);
         fatigueUI.gameObject.GetComponent<Text>().text = ("FATIGUE: " + fatigue);
-        if (timeInDay <= 10.0f)
+        if (timeInDay <= 10.0f && timeInDay >= 9.9f)
         {
-            fatigue -= 50;
+            fatigue -= 10;
         }
         if (timeInDay <= 0.1f)
         {
             timeInDay += 20.0f;
             daysPassed += 1;
-            if (fatigue <= 50)
+            if (fatigue != 100)
             {
-                fatigue += 50;
+                fatigue = (fatigue -= 100);
             }
         } 
     }
