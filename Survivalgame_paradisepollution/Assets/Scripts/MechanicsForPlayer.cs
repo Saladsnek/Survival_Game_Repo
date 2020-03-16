@@ -84,6 +84,12 @@ public class MechanicsForPlayer : MonoBehaviour
             health -= Time.deltaTime * 4;
         }
 
+        //DEATH
+        if (health <= 0)
+        {
+            
+        }
+
     }
     void OnTriggerEnter2D(Collider2D Collider)
     {
