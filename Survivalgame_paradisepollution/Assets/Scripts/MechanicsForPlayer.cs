@@ -13,6 +13,7 @@ public class MechanicsForPlayer : MonoBehaviour
     public float health = 100;
     public float hunger = 100;
     public float thirst = 100;
+    public int fullGarbage = 0;
     public GameObject timeInDayUI;
     public GameObject daysPassedUI;
     public GameObject fatigueUI;
@@ -54,6 +55,11 @@ public class MechanicsForPlayer : MonoBehaviour
             {
                 thirst = 100.0f;
             }
+            var scripts = FindObjectsOfType<SpawnGarbage>();
+            foreach (SpawnGarbage script in scripts)
+            {
+                script.spawnGarbage();
+            } 
         } 
         
         //FATIGUE EFFECTS
@@ -65,6 +71,13 @@ public class MechanicsForPlayer : MonoBehaviour
         //{
         //    get
         //}
+
+        //IF ISLAND IS FULL
+        if (fullGarbage == 1)
+        {
+            hunger -= Time.deltaTime*4;
+            thirst -= Time.deltaTime*4;
+        }
 
         //HUNGER AND THIRST AFFECTS ON HP
         if (hunger >= 50 && hunger <= 100 && thirst <= 100 && thirst >= 50 && health != 100)
@@ -146,4 +159,5 @@ public class MechanicsForPlayer : MonoBehaviour
             }
         }
     }
+
 }
