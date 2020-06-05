@@ -158,6 +158,9 @@ public class MechanicsForPlayer : MonoBehaviour
                 Debug.Log("Cannot get more water");
             }
         }
+
+        //RAYCASTS
+        //RaycastHit2D interact = Physics2D.Raycast (transform.position, new Vector2 ())
     }
 
 }
