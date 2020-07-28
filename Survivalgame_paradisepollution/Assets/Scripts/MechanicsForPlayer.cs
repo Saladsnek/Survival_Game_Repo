@@ -20,6 +20,7 @@ public class MechanicsForPlayer : MonoBehaviour
     public GameObject healthUI;
     public GameObject hungerUI;
     public GameObject thirstUI;
+    public LayerMask interactableLayer;
 
     // Update is called once per frame
     void Update()
@@ -73,10 +74,25 @@ public class MechanicsForPlayer : MonoBehaviour
         //}
 
         //IF ISLAND IS FULL
-        if (fullGarbage == 1)
+        if (fullGarbage == 52)
         {
             hunger -= Time.deltaTime*4;
             thirst -= Time.deltaTime*4;
+        }
+        if(fullGarbage >= 39)
+        {
+            hunger -= Time.deltaTime * 3;
+            thirst -= Time.deltaTime * 3;
+        }
+        if (fullGarbage >= 26)
+        {
+            hunger -= Time.deltaTime * 2;
+            thirst -= Time.deltaTime * 2;
+        }
+        if (fullGarbage >= 13)
+        {
+            hunger -= Time.deltaTime * 1.5f;
+            thirst -= Time.deltaTime * 1.5f;
         }
 
         //HUNGER AND THIRST AFFECTS ON HP
@@ -101,6 +117,68 @@ public class MechanicsForPlayer : MonoBehaviour
         if (health <= 0)
         {
             
+        }
+        //INTERACTION
+        var interactions = Physics2D.OverlapBoxAll(transform.position, new Vector2(1.5f, 1.5f), 0);
+        if (Input.GetButtonDown("Fire1"))
+        {
+            foreach (Collider2D interaction in interactions)
+            {
+                if (interaction.tag == "Distill")
+                {
+                    if (drinkTimer <= 0)
+                    {
+                        Debug.Log("Taken a Drink");
+                        thirst += 10;
+                        drinkTimer += 10.0f;
+                        if (fatigue >= 15)
+                        {
+                            fatigue -= 15.0f;
+                        }
+                        if (fatigue <= 14)
+                        {
+                            fatigue -= fatigue;
+                        }
+                    }
+                    else if (drinkTimer >= 0.1)
+                    {
+                        Debug.Log("Cannot get more water");
+                    }
+                }
+                if (interaction.tag == "Fishing")
+                {
+                    if (fishTimer <= 0)
+                    {
+                        Debug.Log("Fishing and eating");
+                        hunger += 10;
+                        fishTimer += 10.0f;
+                        if (fatigue >= 15)
+                        {
+                            fatigue -= 15.0f;
+                        }
+                        if (fatigue <= 14)
+                        {
+                            fatigue -= fatigue;
+                        }
+                    }
+                    else if (fishTimer >= 0.1)
+                    {
+                        Debug.Log("Cannot Fish yet");
+                    }
+                }
+                if (interaction.tag == "Bed")
+                {
+                    Debug.Log("touched bed");
+                    timeInDay = 0.1f;
+                }
+                if (interaction.tag == "Garbage")      
+                {
+                    Destroy(interaction.gameObject);
+                    FindObjectOfType<SpawnGarbage>().hasTrash = false;
+                    fullGarbage--;
+                    return;
+                }
+            }
         }
 
     }
@@ -137,7 +215,7 @@ public class MechanicsForPlayer : MonoBehaviour
         }
 
         //DRINKING AND PREVENTING RAPID WATER GAIN
-        if (Collider.tag == "Distill")
+        /*if (Collider.tag == "Distill")
         {
             if(drinkTimer <= 0)
             {
@@ -157,10 +235,10 @@ public class MechanicsForPlayer : MonoBehaviour
             {
                 Debug.Log("Cannot get more water");
             }
-        }
-
-        //RAYCASTS
-        //RaycastHit2D interact = Physics2D.Raycast (transform.position, new Vector2 ())
+        }*/
     }
-
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireCube(transform.position, new Vector3(2,2,1));
+    }
 }

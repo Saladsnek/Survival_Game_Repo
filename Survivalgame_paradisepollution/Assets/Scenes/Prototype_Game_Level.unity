@@ -6660,7 +6660,7 @@ GameObject:
   - component: {fileID: 328977912}
   - component: {fileID: 328977911}
   - component: {fileID: 328977910}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FishingPointTemp
   m_TagString: Fishing
   m_Icon: {fileID: 0}
@@ -15583,6 +15583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 780564592}
   - component: {fileID: 780564591}
+  - component: {fileID: 780564593}
   m_Layer: 0
   m_Name: DocksTemp (5)
   m_TagString: Untagged
@@ -15653,6 +15654,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 524
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &780564593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780564590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56eb331cbbce7a438d4e9674bbe6694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToInstance: {fileID: 1143147340}
+  hasTrash: 0
+  destruction: 1
 --- !u!1 &786844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -16660,6 +16676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 823530721}
   - component: {fileID: 823530720}
+  - component: {fileID: 823530722}
   m_Layer: 0
   m_Name: DocksTemp (3)
   m_TagString: Untagged
@@ -16730,6 +16747,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 522
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823530722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823530719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56eb331cbbce7a438d4e9674bbe6694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToInstance: {fileID: 1143147340}
+  hasTrash: 0
+  destruction: 1
 --- !u!1 &832049512
 GameObject:
   m_ObjectHideFlags: 0
@@ -19033,6 +19065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 919212302}
   - component: {fileID: 919212301}
+  - component: {fileID: 919212303}
   m_Layer: 0
   m_Name: DocksTemp (2)
   m_TagString: Untagged
@@ -19103,6 +19136,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 281
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &919212303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919212300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56eb331cbbce7a438d4e9674bbe6694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToInstance: {fileID: 1143147340}
+  hasTrash: 0
+  destruction: 1
 --- !u!1001 &924965988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21298,7 +21346,7 @@ GameObject:
   - component: {fileID: 1038274435}
   - component: {fileID: 1038274434}
   - component: {fileID: 1038274433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WaterDrinkTemp
   m_TagString: Distill
   m_Icon: {fileID: 0}
@@ -21313,7 +21361,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038274432}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -22102,7 +22150,7 @@ GameObject:
   - component: {fileID: 1072616464}
   - component: {fileID: 1072616463}
   - component: {fileID: 1072616466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BedTemp
   m_TagString: Bed
   m_Icon: {fileID: 0}
@@ -23436,12 +23484,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1143147342}
   - component: {fileID: 1143147341}
-  - component: {fileID: 1143147343}
   - component: {fileID: 1143147345}
   - component: {fileID: 1143147344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Garbage
-  m_TagString: Untagged
+  m_TagString: Garbage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23509,18 +23556,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 526
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1143147343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143147340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899f44bad8817aa4087a65a98a30419c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1143147344
 Rigidbody2D:
   serializedVersion: 4
@@ -27516,6 +27551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282994233}
   - component: {fileID: 1282994232}
+  - component: {fileID: 1282994234}
   m_Layer: 0
   m_Name: DocksTemp
   m_TagString: Untagged
@@ -27586,6 +27622,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 279
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282994234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282994231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56eb331cbbce7a438d4e9674bbe6694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToInstance: {fileID: 1143147340}
+  hasTrash: 0
+  destruction: 1
 --- !u!1 &1288097041
 GameObject:
   m_ObjectHideFlags: 0
@@ -27704,6 +27755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1289750414}
   - component: {fileID: 1289750413}
+  - component: {fileID: 1289750415}
   m_Layer: 0
   m_Name: DocksTemp (4)
   m_TagString: Untagged
@@ -27774,6 +27826,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 523
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1289750415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289750412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56eb331cbbce7a438d4e9674bbe6694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToInstance: {fileID: 1143147340}
+  hasTrash: 0
+  destruction: 1
 --- !u!1 &1293241286
 GameObject:
   m_ObjectHideFlags: 0
@@ -29159,6 +29226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351299765}
   - component: {fileID: 1351299764}
+  - component: {fileID: 1351299766}
   m_Layer: 0
   m_Name: DocksTemp (1)
   m_TagString: Untagged
@@ -29229,6 +29297,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 280
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1351299766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351299763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56eb331cbbce7a438d4e9674bbe6694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjectToInstance: {fileID: 1143147340}
+  hasTrash: 0
+  destruction: 1
 --- !u!1 &1360355787
 GameObject:
   m_ObjectHideFlags: 0
@@ -33610,6 +33693,9 @@ MonoBehaviour:
   healthUI: {fileID: 1015765526}
   hungerUI: {fileID: 2122211220}
   thirstUI: {fileID: 1116235020}
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &1516394872
 BoxCollider2D:
   m_ObjectHideFlags: 0
